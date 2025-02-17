@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สมัครสมาชิก</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* พื้นหลังเป็นวิดีโอ */
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* กล่องฟอร์มสมัครสมาชิก */
+        .register-container {
+            background-color: rgba(255, 255, 255, 0.9);  /* เพิ่มโปร่งแสงให้กับพื้นหลังของฟอร์ม */
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);  /* เงาสร้างมิติ */
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            transform: scale(1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .register-container:hover {
+            transform: scale(1.05);  /* เพิ่มการขยายขนาดเมื่อเลื่อนเมาส์ */
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+            font-size: 16px;
+            transition: all 0.3s;
+            background-color: #f9f9f9;
+        }
+
+        input:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);  /* เพิ่มเอฟเฟกต์ขยายขนาดเมื่อเลื่อนเมาส์ */
+        }
+
+        .link {
+            margin-top: 15px;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .link a {
+            color: #4CAF50;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .link a:hover {
+            color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- วิดีโอพื้นหลัง -->
+    <video class="background-video" autoplay muted loop>
+        <source src="images/ddd.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- ฟอร์มสมัครสมาชิก -->
+    <div class="register-container">
+        <h2>สมัครสมาชิก</h2>
+        <form action="register.php" method="POST">
+            <input type="text" name="username" placeholder="ชื่อผู้ใช้" required>
+            <input type="password" name="password" placeholder="รหัสผ่าน" required>
+            <input type="password" name="confirm_password" placeholder="ยืนยันรหัสผ่าน" required>
+            <button type="submit">สมัครสมาชิก</button>
+        </form>
+        <div class="link">
+            <p>มีบัญชีแล้ว? <a href="login.html">เข้าสู่ระบบ</a></p>
+        </div>
+    </div>
+
+</body>
+</html>
